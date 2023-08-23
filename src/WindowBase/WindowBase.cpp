@@ -55,7 +55,7 @@ void WindowBase::initWindow()
   wcx.lpfnWndProc = &WindowBase::routeWindowMessage;
   wcx.cbWndExtra = sizeof(WindowBase *);
   wcx.hInstance = h_instance;
-  wcx.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
+  wcx.hIcon = nullptr;
   wcx.hCursor = LoadCursor(nullptr, IDC_ARROW);
   wcx.hbrBackground = reinterpret_cast<HBRUSH>((COLOR_WINDOW + 1));
   wcx.lpszClassName = class_name.c_str();
@@ -63,7 +63,7 @@ void WindowBase::initWindow()
     MessageBox(nullptr, L"注册窗口类失败", L"系统提示", NULL);
     return;
   }
-  this->hwnd = CreateWindowEx(WS_EX_NOREDIRECTIONBITMAP, wcx.lpszClassName, wcx.lpszClassName, WS_OVERLAPPEDWINDOW, x, y, w, h, nullptr, nullptr, h_instance, static_cast<LPVOID>(this));
+  this->hwnd = CreateWindowEx(WS_EX_TOOLWINDOW, wcx.lpszClassName, wcx.lpszClassName, WS_OVERLAPPEDWINDOW, x, y, w, h, nullptr, nullptr, h_instance, static_cast<LPVOID>(this));
   constexpr BOOL attr = TRUE;
   DwmSetWindowAttribute(hwnd, DWMWA_TRANSITIONS_FORCEDISABLED, &attr, sizeof(attr)); // 移除窗口打开与关闭时的动画效果
   SetWindowPos(hwnd, nullptr, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
