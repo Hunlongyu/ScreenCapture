@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#include "Painter.h"
-#include "State.h"
+#include "../State.h"
+#include "../Utils/Painter.h"
 #include <Windows.h>
 #include <blend2d.h>
 #include <format>

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "WindowBase.h"
+#include "WindowBase/WindowBase.h"
 #include <blend2d.h>
 #include <vector>
 

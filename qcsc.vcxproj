@@ -135,12 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MainWin.h" />
-    <ClInclude Include="Painter.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="Util.h" />
-    <ClInclude Include="WindowBase.h" />
+    <ClInclude Include="src\MainWin.h" />
+    <ClInclude Include="src\Utils\Painter.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\State.h" />
+    <ClInclude Include="src\Utils\Util.h" />
+    <ClInclude Include="src\WindowBase\WindowBase.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -149,16 +149,16 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWin.cpp" />
-    <ClCompile Include="MainWinDesktopWinBox.cpp" />
-    <ClCompile Include="MainWinMask.cpp" />
-    <ClCompile Include="Painter.cpp" />
-    <ClCompile Include="Util.cpp" />
-    <ClCompile Include="WindowBaseMouse.cpp" />
-    <ClCompile Include="WindowBasePaint.cpp" />
-    <ClCompile Include="WindowBaseSave.cpp" />
-    <ClCompile Include="WindowBase.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MainWin.cpp" />
+    <ClCompile Include="src\MainWinDesktopWinBox.cpp" />
+    <ClCompile Include="src\MainWinMask.cpp" />
+    <ClCompile Include="src\Utils\Painter.cpp" />
+    <ClCompile Include="src\Utils\Util.cpp" />
+    <ClCompile Include="src\WindowBase\WindowBaseMouse.cpp" />
+    <ClCompile Include="src\WindowBase\WindowBasePaint.cpp" />
+    <ClCompile Include="src\WindowBase\WindowBaseSave.cpp" />
+    <ClCompile Include="src\WindowBase\WindowBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE.txt" />

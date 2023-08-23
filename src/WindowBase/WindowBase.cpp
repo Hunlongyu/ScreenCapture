@@ -1,6 +1,5 @@
 ﻿#include "WindowBase.h"
-
-#include "Util.h"
+#include "../Utils/Util.h"
 #include <dwmapi.h>
 #include <windowsx.h>
 

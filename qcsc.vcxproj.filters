@@ -15,22 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="State.h">
+    <ClInclude Include="src\State.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="WindowBase.h">
+    <ClInclude Include="src\WindowBase\WindowBase.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MainWin.h">
+    <ClInclude Include="src\MainWin.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Painter.h">
+    <ClInclude Include="src\Utils\Painter.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Util.h">
+    <ClInclude Include="src\Utils\Util.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="src\resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,34 +41,34 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WindowBase.cpp">
+    <ClCompile Include="src\WindowBase\WindowBase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Util.cpp">
+    <ClCompile Include="src\Utils\Util.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WindowBaseSave.cpp">
+    <ClCompile Include="src\WindowBase\WindowBaseSave.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WindowBaseMouse.cpp">
+    <ClCompile Include="src\WindowBase\WindowBaseMouse.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WindowBasePaint.cpp">
+    <ClCompile Include="src\WindowBase\WindowBasePaint.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Painter.cpp">
+    <ClCompile Include="src\Utils\Painter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MainWin.cpp">
+    <ClCompile Include="src\MainWin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MainWinDesktopWinBox.cpp">
+    <ClCompile Include="src\MainWinDesktopWinBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MainWinMask.cpp">
+    <ClCompile Include="src\MainWinMask.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
