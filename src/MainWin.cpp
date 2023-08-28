@@ -15,8 +15,12 @@ MainWin::MainWin()
 MainWin::~MainWin() {}
 
 void MainWin::init() { mainWin = new MainWin(); }
+
 MainWin *MainWin::get() { return mainWin; }
+
 void MainWin::dispose() { delete mainWin; }
+
+void MainWin::set_filename(const std::wstring &filename) { this->filename = filename; }
 
 void MainWin::initWindowSize()
 {
@@ -40,7 +44,6 @@ void MainWin::shotScreen()
   GetDIBits(h_dc, hBitmap, 0, h, desktopPixelData, &info, DIB_RGB_COLORS);
   DeleteDC(h_dc);
   DeleteObject(hBitmap);
-
   originalImg = new BLImage();
   originalImg->createFromData(w, h, BL_FORMAT_PRGB32, desktopPixelData, stride, BL_DATA_ACCESS_RW, [](void *impl, void *externalData, void *userData) { delete[] externalData; });
 }

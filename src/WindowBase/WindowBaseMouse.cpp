@@ -24,8 +24,12 @@ bool WindowBase::onMouseMove(const int &x, const int &y)
 
 bool WindowBase::onLeftBtnUp(const int &x, const int &y)
 {
-
   isLeftBtnDown = false;
-  saveClipboard();
+  if (filename.empty()) {
+    saveClipboard();
+  }
+  else {
+    saveFile();
+  }
   return false;
 }

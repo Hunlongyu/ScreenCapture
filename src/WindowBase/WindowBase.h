@@ -21,6 +21,8 @@ public:
   HWND hwnd;
   State state = State::start;
 
+  std::wstring filename{L""};
+
   BLContext *paintCtx;
   BLImage *prepareImg;
   BLImage *originalImg;
@@ -63,4 +65,5 @@ private:
 
   // save
   void saveClipboard() const;
+  void saveFile() const;
 };

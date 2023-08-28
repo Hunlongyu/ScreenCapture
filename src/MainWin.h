@@ -13,6 +13,8 @@ public:
   static MainWin *get();
   static void dispose();
 
+  void set_filename(const std::wstring &filename);
+
 private:
   MainWin();
   void initWindowSize();

@@ -4,6 +4,33 @@
 #include <Shobjidl.h>
 #include <atlbase.h>
 #include <format>
+#include <string>
+
+char *ConvertWStringToCharPtr(const std::wstring &wstr)
+{
+  const int bufferSize = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
+  const auto char_ptr = new char[bufferSize];
+  WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, char_ptr, bufferSize, nullptr, nullptr);
+  return char_ptr;
+}
+
+void WindowBase::saveFile() const
+{
+  const auto w = cutBox.x1 - cutBox.x0;
+  const auto h = cutBox.y1 - cutBox.y0;
+  BLImage imgSave(w, h, BL_FORMAT_PRGB32);
+  paintCtx->begin(imgSave);
+  paintCtx->blitImage(BLPoint(0, 0), *originalImg, BLRectI((int)cutBox.x0, (int)cutBox.y0, (int)w, (int)h));
+  paintCtx->end();
+  const auto path = ConvertWStringToCharPtr(filename);
+  const auto res = imgSave.writeToFile(path);
+  delete[] path;
+  // imgSave.writeToFile("H:\\temp\\test.png");
+  if (res != BL_SUCCESS) {
+    quitApp(0);
+  }
+  quitApp(2);
+}
 
 void WindowBase::saveClipboard() const
 {
