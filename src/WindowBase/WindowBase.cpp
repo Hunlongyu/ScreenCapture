@@ -24,7 +24,9 @@ LRESULT CALLBACK WindowBase::routeWindowMessage(HWND hWnd, UINT msg, WPARAM wPar
   return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-WindowBase::WindowBase() {}
+WindowBase::WindowBase()
+{
+}
 
 WindowBase::~WindowBase()
 {
@@ -63,7 +65,7 @@ void WindowBase::initWindow()
     MessageBox(nullptr, L"注册窗口类失败", L"系统提示", NULL);
     return;
   }
-  this->hwnd = CreateWindowEx(WS_EX_TOOLWINDOW, wcx.lpszClassName, wcx.lpszClassName, WS_OVERLAPPEDWINDOW, x, y, w, h, nullptr, nullptr, h_instance, static_cast<LPVOID>(this));
+  this->hwnd = CreateWindowEx(WS_EX_TOOLWINDOW, wcx.lpszClassName, wcx.lpszClassName, WS_OVERLAPPEDWINDOW, x, y, w, h, nullptr, nullptr, h_instance, this);
   constexpr BOOL attr = TRUE;
   DwmSetWindowAttribute(hwnd, DWMWA_TRANSITIONS_FORCEDISABLED, &attr, sizeof(attr)); // 移除窗口打开与关闭时的动画效果
   SetWindowPos(hwnd, nullptr, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
@@ -112,6 +114,14 @@ LRESULT CALLBACK WindowBase::windowProc(HWND hWnd, UINT msg, WPARAM wParam, LPAR
       refresh();
     }
     return false;
+  }
+  case WM_KEYDOWN: {
+    switch (wParam) {
+    case VK_ESCAPE: {
+      quitApp(0);
+      return false;
+    }
+    }
   }
   }
   return DefWindowProcW(hWnd, msg, wParam, lParam);

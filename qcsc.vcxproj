@@ -148,6 +148,7 @@
     <None Include=".clang-format" />
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="CHANGELOG.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>

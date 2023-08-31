@@ -42,6 +42,7 @@
     <None Include=".gitignore" />
     <None Include=".gitattributes" />
     <None Include="README.md" />
+    <None Include="CHANGELOG.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">

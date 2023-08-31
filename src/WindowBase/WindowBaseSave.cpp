@@ -20,12 +20,11 @@ void WindowBase::saveFile() const
   const auto h = cutBox.y1 - cutBox.y0;
   BLImage imgSave(w, h, BL_FORMAT_PRGB32);
   paintCtx->begin(imgSave);
-  paintCtx->blitImage(BLPoint(0, 0), *originalImg, BLRectI((int)cutBox.x0, (int)cutBox.y0, (int)w, (int)h));
+  paintCtx->blitImage(BLPoint(0, 0), *originalImg, BLRectI(static_cast<int>(cutBox.x0), static_cast<int>(cutBox.y0), static_cast<int>(w), static_cast<int>(h)));
   paintCtx->end();
   const auto path = ConvertWStringToCharPtr(filename);
   const auto res = imgSave.writeToFile(path);
   delete[] path;
-  // imgSave.writeToFile("H:\\temp\\test.png");
   if (res != BL_SUCCESS) {
     quitApp(0);
   }
